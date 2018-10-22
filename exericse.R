@@ -1,5 +1,5 @@
 # Exercise 7: DPLYR practice with NBA data
-# install.packages("dplyr")
+install.packages("dplyr")
 library(dplyr)
 
 # Read in the NBA team data of the 2016-2017 season from the data directory  
@@ -15,13 +15,14 @@ View(team.data)
 
 
 # Add a column that gives the turnovers to steals ratio (TOV / STL) for each team
-
+team.data <- mutate(team.data, ratio = TOV / STL )
 
 # Sort the teams from lowest turnover/steal ratio to highest
-
+team.data <- arrange(team.data, ratio)
 
 #Find the average BLK and STL for teams having a TOV greater than the average TOV of all teams
-
+avg <- mean(team.data$TOV)
+filter(team.data, )
 
 # Get the team that had the highest Total Rebounds (TRB) only with the columns 
 # Team and TRB  *using one line of code*
@@ -41,15 +42,27 @@ View(team.data)
 
 # Find all the Pokemon that are "Water" or "Ghost" Type 1 and have a speed higher than 50
 
+#USe filter 
+
 # Find the average HP, median HP, min HP and max HP for each of the type of generations
+
+#group by, then summarize()
 
 #FIND THE NUMBER OF POKEMONS THAT ARE LEGENDARY AND THE NUMBER OF POKEMONS THAT ARE NOT LEGENDARY 
 #THAT HAVE A HIGHER ATTACK THAN DEFENSE VALUE
 #NOTE: IT SHOULD BE DONE IN ONE RUN OF DPLYR
 #HINT : Look into count() function by dplyr
 
+#filter with legendary, mutate 
+
 #Find the generation that has the most number of pokemons with Type.1 as "Fire"
+
+#Select by generation 
+#type.1 == fire 
 
 # WHICH Type 1 pokemon has the overall within group max value of SUM of HP, Attack, Defense, Sp..Att, Sp.Def, Speed
 #HINT : LOOK AT THE DATASET! - THERE IS A SUPER EASY WAY TO DO THIS.
+
+#summarize total 
+#filter 
 
